@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="description" content="الحوقلة — لا حول ولا قوة إلا بالله — كنز من كنوز الجنة | Hawqala — There is no power nor strength except with Allah">
+<meta name="theme-color" content="#0c1a2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>الحوقلة | Hawqala</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤲</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0c1a2a;--bg2:#0f2035;--bg3:#132840;--surface:#162d48;
+--gold:#c9a84c;--gold2:#e8c96a;--gold3:#a8872e;--gold-dim:#c9a84c10;
+--text:#d4c5a0;--text2:#9a8d72;--text3:#6b5f47;
+--border:#1e3a5a;--font-ar:'Amiri',serif;--font-ar2:'Noto Naskh Arabic',serif;
+--font-quran:'Amiri Quran',serif;--font-en:'Crimson Pro',serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-ar2);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+
+/* Islamic geometric background pattern */
+body::before{content:'';position:fixed;inset:0;
+background:
+  radial-gradient(ellipse at 50% 0%,#c9a84c06 0%,transparent 50%),
+  radial-gradient(ellipse at 50% 100%,#c9a84c04 0%,transparent 40%);
+pointer-events:none;z-index:0}
+
+/* Geometric pattern overlay */
+.geo-pattern{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.03;
+background-image:
+  repeating-linear-gradient(0deg,#c9a84c 0px,transparent 1px,transparent 60px),
+  repeating-linear-gradient(60deg,#c9a84c 0px,transparent 1px,transparent 60px),
+  repeating-linear-gradient(120deg,#c9a84c 0px,transparent 1px,transparent 60px)}
+
+/* Nav */
+.nav{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);display:flex;justify-content:center;gap:0;z-index:100;padding:6px 0;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-item{flex:1;max-width:90px;text-align:center;padding:6px 4px;cursor:pointer;transition:all .2s;border-radius:8px;margin:0 2px}
+.nav-item:hover,.nav-item.active{background:var(--gold-dim)}
+.nav-item.active .nav-icon{color:var(--gold)}
+.nav-item.active .nav-label{color:var(--gold)}
+.nav-icon{font-size:1.3rem;display:block;margin-bottom:2px}
+.nav-label{font-size:0.6rem;color:var(--text3);display:block;font-family:var(--font-ar2)}
+
+/* Sections */
+.section{display:none;position:relative;z-index:1;padding:20px 16px 100px;max-width:600px;margin:0 auto}
+.section.active{display:block}
+
+/* ═══ HOME ═══ */
+.hero{text-align:center;padding:40px 0 20px}
+.bismillah{font-family:var(--font-quran);font-size:1.6rem;color:var(--gold3);margin-bottom:24px;opacity:0.7}
+.hawqala-main{font-family:var(--font-quran);font-size:2.6rem;color:var(--gold);line-height:1.8;margin-bottom:8px;text-shadow:0 0 40px #c9a84c15;letter-spacing:1px}
+@media(min-width:400px){.hawqala-main{font-size:3.2rem}}
+.hawqala-latin{font-family:var(--font-en);font-size:1rem;color:var(--text2);font-style:italic;margin-bottom:6px;direction:ltr}
+.hawqala-en{font-family:var(--font-en);font-size:0.92rem;color:var(--text3);direction:ltr;margin-bottom:24px}
+.divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);margin:20px auto}
+.meaning-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 20px;margin:16px 0;text-align:right}
+.meaning-card h3{font-family:var(--font-ar);font-size:1.1rem;color:var(--gold);margin-bottom:10px}
+.meaning-card p{font-size:0.92rem;line-height:2;color:var(--text)}
+.meaning-card .en{font-family:var(--font-en);direction:ltr;text-align:left;color:var(--text2);font-size:0.88rem;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+
+/* ═══ HADITH ═══ */
+.hadith-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden}
+.hadith-card::before{content:'❝';position:absolute;top:-5px;right:10px;font-size:3rem;color:var(--gold);opacity:0.08;font-family:serif}
+.hadith-ar{font-family:var(--font-ar);font-size:1.05rem;line-height:2.1;color:var(--text);margin-bottom:10px}
+.hadith-en{font-family:var(--font-en);font-size:0.85rem;line-height:1.7;color:var(--text2);direction:ltr;text-align:left;margin-bottom:10px}
+.hadith-source{font-family:var(--font-ar2);font-size:0.72rem;color:var(--gold3);display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--border)}
+.hadith-source .en-src{font-family:var(--font-en);direction:ltr}
+.section-header{text-align:center;padding:32px 0 20px}
+.section-header h2{font-family:var(--font-ar);font-size:1.5rem;color:var(--gold);margin-bottom:4px}
+.section-header p{font-size:0.82rem;color:var(--text3);font-family:var(--font-en);direction:ltr}
+
+/* ═══ VIRTUES ═══ */
+.virtue{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:10px;display:flex;gap:14px;align-items:start}
+.virtue-num{width:32px;height:32px;border-radius:50%;background:var(--gold-dim);border:1px solid #c9a84c25;display:flex;align-items:center;justify-content:center;font-family:var(--font-en);font-size:0.78rem;font-weight:600;color:var(--gold);flex-shrink:0}
+.virtue-text{flex:1}
+.virtue-text h4{font-family:var(--font-ar);font-size:0.95rem;color:var(--gold2);margin-bottom:4px}
+.virtue-text p{font-size:0.85rem;line-height:1.8;color:var(--text)}
+.virtue-text .en{font-family:var(--font-en);direction:ltr;text-align:left;color:var(--text2);font-size:0.82rem;line-height:1.6;margin-top:6px}
+
+/* ═══ OCCASIONS ═══ */
+.occasion{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:8px}
+.occasion-ar{font-family:var(--font-ar2);font-size:0.92rem;color:var(--text);margin-bottom:4px}
+.occasion-en{font-family:var(--font-en);font-size:0.82rem;color:var(--text2);direction:ltr;text-align:left}
+
+/* ═══ TASBEEH ═══ */
+.tasbeeh-wrap{text-align:center;padding:40px 0 20px}
+.tasbeeh-phrase{font-family:var(--font-quran);font-size:2rem;color:var(--gold);margin-bottom:24px;line-height:1.8}
+.tasbeeh-counter{font-family:var(--font-en);font-size:5rem;font-weight:700;color:var(--gold);margin:16px 0;text-shadow:0 0 30px #c9a84c20;transition:transform .1s}
+.tasbeeh-counter.pulse{transform:scale(1.08)}
+.tasbeeh-target{font-size:0.78rem;color:var(--text3);margin-bottom:24px;font-family:var(--font-en);direction:ltr}
+.tasbeeh-btn{width:160px;height:160px;border-radius:50%;border:3px solid var(--gold);background:linear-gradient(135deg,var(--surface),var(--bg3));color:var(--gold);font-family:var(--font-ar);font-size:1.3rem;cursor:pointer;transition:all .15s;box-shadow:0 0 30px #c9a84c10,inset 0 0 20px #c9a84c08;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.tasbeeh-btn:active{transform:scale(0.95);box-shadow:0 0 50px #c9a84c20,inset 0 0 30px #c9a84c15}
+.tasbeeh-actions{display:flex;gap:10px;justify-content:center;margin-top:24px}
+.tasbeeh-act{padding:10px 20px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text2);font-family:var(--font-ar2);font-size:0.8rem;cursor:pointer;transition:all .15s}
+.tasbeeh-act:hover{border-color:var(--gold);color:var(--gold)}
+.tasbeeh-total{margin-top:20px;font-size:0.75rem;color:var(--text3)}
+.tasbeeh-total span{color:var(--gold);font-weight:600}
+
+/* Vibes */
+.glow-text{animation:glow 3s ease-in-out infinite alternate}
+@keyframes glow{from{text-shadow:0 0 20px #c9a84c10}to{text-shadow:0 0 40px #c9a84c20}}
+
+/* Responsive */
+@media(max-width:380px){
+.hawqala-main{font-size:2.2rem}
+.tasbeeh-btn{width:140px;height:140px;font-size:1.1rem}
+.tasbeeh-counter{font-size:4rem}
+}
+</style>
+</head>
+<body>
+<div class="geo-pattern"></div>
+
+<!-- ═══ HOME ═══ -->
+<div class="section active" id="sec-home">
+    <div class="hero">
+        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <div class="hawqala-main glow-text">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ</div>
+        <div class="hawqala-latin">Lā ḥawla wa lā quwwata illā billāh</div>
+        <div class="hawqala-en">There is no power nor strength except with Allah</div>
+        <div class="divider"></div>
+    </div>
+
+    <div class="meaning-card">
+        <h3>معنى الحوقلة</h3>
+        <p>الحوقلة هي اختصار لعبارة «لا حول ولا قوة إلا بالله العلي العظيم». وهي كلمة استسلام وتفويض كامل لله تعالى، يُعلن بها العبد عجزه عن تحويل حاله من حال إلى حال، أو القيام بأي أمر إلا بمعونة الله وتوفيقه. هي إقرار بأن الحول — أي التحوّل والتغيير — والقوة على ذلك كله بيد الله وحده.</p>
+        <div class="en">Al-Hawqala is the abbreviated form of "Lā ḥawla wa lā quwwata illā billāhil-ʿAliyyil-ʿAẓīm" (There is no power nor strength except with Allah, the Most High, the Most Great). It is a declaration of complete surrender and trust in Allah — an acknowledgment that one has no ability to change any condition or accomplish anything except through Allah's aid and guidance. It affirms that all transformation and strength belong solely to Allah.</div>
+    </div>
+
+    <div class="meaning-card">
+        <h3>كنز من كنوز الجنة</h3>
+        <p>وصفها النبي ﷺ بأنها كنز من كنوز الجنة. والكنز هو المال المدّخر النفيس الذي يحرص عليه صاحبه، فكيف بكنز في الجنة؟ إنها كلمة خفيفة على اللسان، عظيمة في الميزان، تفتح للعبد أبواب الرزق والفرج والسكينة.</p>
+        <div class="en">The Prophet ﷺ described it as "a treasure from the treasures of Paradise." A treasure (kanz) is a precious, carefully guarded store of wealth — so what of a treasure in Paradise itself? It is a phrase light on the tongue yet immensely heavy on the scales of good deeds, opening doors to provision, relief, and inner tranquility for the servant of Allah.</div>
+    </div>
+</div>
+
+<!-- ═══ HADITH ═══ -->
+<div class="section" id="sec-hadith">
+    <div class="section-header">
+        <h2>الأحاديث والآثار</h2>
+        <p>Prophetic Traditions and Narrations</p>
+    </div>
+
+    <div class="hadith-card">
+        <div class="hadith-ar">عن أبي موسى الأشعري رضي الله عنه قال: قال لي رسول الله ﷺ: «ألا أدلُّك على كنز من كنوز الجنة؟» فقلتُ: بلى يا رسول الله. قال: «لا حول ولا قوة إلا بالله»</div>
+        <div class="hadith-en">Abu Musa al-Ash'ari (may Allah be pleased with him) reported: The Messenger of Allah ﷺ said to me: "Shall I not guide you to a treasure from the treasures of Paradise?" I said: "Yes, O Messenger of Allah." He said: "Lā ḥawla wa lā quwwata illā billāh."</div>
+        <div class="hadith-source"><span>متفق عليه</span><span class="en-src">Sahih al-Bukhari 4205, Sahih Muslim 2704</span></div>
+    </div>
+
+    <div class="hadith-card">
+        <div class="hadith-ar">عن أبي هريرة رضي الله عنه قال: قال رسول الله ﷺ: «ما قال عبد: لا حول ولا قوة إلا بالله إلا كان دواءً من تسعة وتسعين داء، أيسرها الهمّ»</div>
+        <div class="hadith-en">Abu Hurayrah (may Allah be pleased with him) reported: The Messenger of Allah ﷺ said: "No servant says 'Lā ḥawla wa lā quwwata illā billāh' except that it becomes a remedy for ninety-nine ailments, the least of which is anxiety."</div>
+        <div class="hadith-source"><span>رواه الحاكم</span><span class="en-src">Al-Mustadrak 'ala al-Sahihayn</span></div>
+    </div>
+
+    <div class="hadith-card">
+        <div class="hadith-ar">عن قيس بن سعد بن عبادة رضي الله عنه أن النبي ﷺ قال: «ألا أدلّكم على باب من أبواب الجنة؟» قالوا: بلى. قال: «لا حول ولا قوة إلا بالله»</div>
+        <div class="hadith-en">Qais ibn Sa'd ibn 'Ubadah (may Allah be pleased with him) reported: The Prophet ﷺ said: "Shall I not guide you to one of the gates of Paradise?" They said: "Yes." He said: "Lā ḥawla wa lā quwwata illā billāh."</div>
+        <div class="hadith-source"><span>رواه الترمذي</span><span class="en-src">Sunan al-Tirmidhi 3581</span></div>
+    </div>
+
+    <div class="hadith-card">
+        <div class="hadith-ar">عن أنس بن مالك رضي الله عنه أن النبي ﷺ قال: «من قال لا حول ولا قوة إلا بالله كانت له دواءً من تسعة وتسعين داءً»</div>
+        <div class="hadith-en">Anas ibn Malik (may Allah be pleased with him) reported: The Prophet ﷺ said: "Whoever says 'Lā ḥawla wa lā quwwata illā billāh,' it becomes a remedy for ninety-nine ailments."</div>
+        <div class="hadith-source"><span>رواه ابن أبي الدنيا</span><span class="en-src">Ibn Abi al-Dunya, al-Faraj ba'd al-Shiddah</span></div>
+    </div>
+
+    <div class="hadith-card">
+        <div class="hadith-ar">عن أبي ذر رضي الله عنه أن النبي ﷺ قال: «يا أبا ذر، ألا أدلّك على كنز من كنوز الجنة؟» قال: بلى يا رسول الله. قال: «لا حول ولا قوة إلا بالله، لا ملجأ ولا منجا من الله إلا إليه»</div>
+        <div class="hadith-en">Abu Dharr (may Allah be pleased with him) reported: The Prophet ﷺ said: "O Abu Dharr, shall I not guide you to a treasure from the treasures of Paradise?" He said: "Yes, O Messenger of Allah." He said: "Lā ḥawla wa lā quwwata illā billāh, lā malja'a wa lā manjā min Allāhi illā ilayh."</div>
+        <div class="hadith-source"><span>رواه النسائي</span><span class="en-src">Sunan al-Nasa'i, 'Amal al-Yawm wa al-Laylah 598</span></div>
+    </div>
+
+    <div class="hadith-card">
+        <div class="hadith-ar">من أذكار الصباح والمساء: «لا حول ولا قوة إلا بالله العلي العظيم» — وهي من الباقيات الصالحات التي ذكرها الله تعالى في قوله: ﴿وَالْبَاقِيَاتُ الصَّالِحَاتُ خَيْرٌ عِندَ رَبِّكَ ثَوَابًا وَخَيْرٌ أَمَلًا﴾</div>
+        <div class="hadith-en">Among the morning and evening remembrances: "Lā ḥawla wa lā quwwata illā billāhil-'Aliyyil-'Aẓīm" — It is from the "enduring good deeds" (al-bāqiyāt al-ṣāliḥāt) that Allah mentioned: "And the enduring good deeds are better to your Lord for reward and better for hope." (Quran 18:46)</div>
+        <div class="hadith-source"><span>سورة الكهف: ٤٦</span><span class="en-src">Surah al-Kahf 18:46</span></div>
+    </div>
+</div>
+
+<!-- ═══ VIRTUES ═══ -->
+<div class="section" id="sec-virtues">
+    <div class="section-header">
+        <h2>فضائل الحوقلة</h2>
+        <p>Virtues and Benefits</p>
+    </div>
+
+    <div class="virtue"><div class="virtue-num">١</div><div class="virtue-text"><h4>كنز من كنوز الجنة</h4><p>وصفها رسول الله ﷺ بأنها كنز من كنوز الجنة، مما يدل على عظم أجرها وثوابها عند الله.</p><div class="en">The Prophet ﷺ described it as a treasure from the treasures of Paradise, indicating the immense reward it carries with Allah.</div></div></div>
+
+    <div class="virtue"><div class="virtue-num">٢</div><div class="virtue-text"><h4>باب من أبواب الجنة</h4><p>هي باب من أبواب الجنة كما أخبر النبي ﷺ، فمن أكثر منها فُتحت له أبواب الخير.</p><div class="en">It is a gate from the gates of Paradise as the Prophet ﷺ informed, and whoever says it abundantly, the doors of goodness are opened for them.</div></div></div>
+
+    <div class="virtue"><div class="virtue-num">٣</div><div class="virtue-text"><h4>دواء من تسعة وتسعين داء</h4><p>أيسرها الهمّ والغمّ. فهي شفاء للنفس والقلب، وراحة من ثقل الدنيا وهمومها.</p><div class="en">A remedy for ninety-nine ailments, the least of which is anxiety and grief. It is a healing for the soul and heart, and relief from the burdens and worries of this world.</div></div></div>
+
+    <div class="virtue"><div class="virtue-num">٤</div><div class="virtue-text"><h4>التفويض الكامل لله تعالى</h4><p>تعبير عن الإيمان بأن كل شيء بيد الله، وأن العبد لا يملك لنفسه نفعاً ولا ضراً إلا بإذن الله.</p><div class="en">An expression of faith that everything is in Allah's hands, and that the servant possesses no benefit nor harm for himself except by Allah's permission.</div></div></div>
+
+    <div class="virtue"><div class="virtue-num">٥</div><div class="virtue-text"><h4>من الباقيات الصالحات</h4><p>هي من الأعمال الباقية التي تنفع صاحبها في الدنيا والآخرة ولا تفنى بفناء الدنيا.</p><div class="en">It is among the enduring good deeds that benefit the doer in this world and the hereafter, and do not perish with the passing of this world.</div></div></div>
+
+    <div class="virtue"><div class="virtue-num">٦</div><div class="virtue-text"><h4>الاستعانة بالله عند الشدائد</h4><p>يقولها المسلم عند كل مصيبة وشدة وضيق، فتكون له عوناً وسنداً وفرجاً من الله تعالى.</p><div class="en">The Muslim says it at every hardship, difficulty, and distress, and it becomes a support, aid, and relief from Allah Most High.</div></div></div>
+
+    <div class="virtue"><div class="virtue-num">٧</div><div class="virtue-text"><h4>طرد الشيطان</h4><p>من فوائد الحوقلة أنها تطرد الشيطان وتحصّن المسلم من الوساوس والأفكار السلبية.</p><div class="en">Among the benefits of Hawqala is that it repels Satan and fortifies the Muslim against whispers and negative thoughts.</div></div></div>
+
+    <div class="virtue"><div class="virtue-num">٨</div><div class="virtue-text"><h4>السكينة والطمأنينة</h4><p>تُنزل على القلب سكينة وطمأنينة وراحة، خاصة في أوقات القلق والخوف والحزن.</p><div class="en">It brings tranquility, peace, and comfort to the heart, especially in times of anxiety, fear, and sadness.</div></div></div>
+</div>
+
+<!-- ═══ OCCASIONS ═══ -->
+<div class="section" id="sec-occasions">
+    <div class="section-header">
+        <h2>مواطن الحوقلة</h2>
+        <p>When to Say Hawqala</p>
+    </div>
+
+    <div class="occasion"><div class="occasion-ar">عند سماع حيّ على الصلاة وحيّ على الفلاح في الأذان</div><div class="occasion-en">Upon hearing "Ḥayya 'ala al-ṣalāh" and "Ḥayya 'ala al-falāḥ" in the call to prayer (Adhan)</div></div>
+    <div class="occasion"><div class="occasion-ar">عند المصائب والابتلاءات والشدائد</div><div class="occasion-en">At times of calamities, trials, and hardships</div></div>
+    <div class="occasion"><div class="occasion-ar">عند الهمّ والغمّ والحزن والقلق</div><div class="occasion-en">During moments of worry, grief, sadness, and anxiety</div></div>
+    <div class="occasion"><div class="occasion-ar">في أذكار الصباح والمساء</div><div class="occasion-en">In the morning and evening remembrances (adhkār)</div></div>
+    <div class="occasion"><div class="occasion-ar">عند الخروج من المنزل</div><div class="occasion-en">When leaving the house</div></div>
+    <div class="occasion"><div class="occasion-ar">عند رؤية ما يكره أو سماع ما يُغضب</div><div class="occasion-en">Upon seeing something disliked or hearing something that causes anger</div></div>
+    <div class="occasion"><div class="occasion-ar">عند العجز عن القيام بأمر أو مواجهة صعوبة</div><div class="occasion-en">When unable to accomplish a task or facing difficulty</div></div>
+    <div class="occasion"><div class="occasion-ar">عند التعرّض للظلم أو الاعتداء</div><div class="occasion-en">When subjected to injustice or aggression</div></div>
+    <div class="occasion"><div class="occasion-ar">عند تقلّب الأحوال وتغيّر الأوضاع</div><div class="occasion-en">When circumstances change and situations shift</div></div>
+    <div class="occasion"><div class="occasion-ar">في كل وقت وحين لذكر الله والتقرّب إليه</div><div class="occasion-en">At all times for the remembrance of Allah and drawing closer to Him</div></div>
+</div>
+
+<!-- ═══ TASBEEH ═══ -->
+<div class="section" id="sec-tasbeeh">
+    <div class="tasbeeh-wrap">
+        <div class="tasbeeh-phrase glow-text">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ</div>
+        <div class="tasbeeh-counter" id="counter">0</div>
+        <div class="tasbeeh-target">Target: <span id="target-display">33</span></div>
+        <button class="tasbeeh-btn" id="tasbeeh-btn" onclick="increment()">اضغط<br>للتسبيح</button>
+        <div class="tasbeeh-actions">
+            <button class="tasbeeh-act" onclick="resetCounter()">إعادة</button>
+            <button class="tasbeeh-act" onclick="cycleTarget()">الهدف: <span id="target-btn">33</span></button>
+        </div>
+        <div class="tasbeeh-total">الإجمالي الكلي: <span id="grand-total">0</span></div>
+    </div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<div class="nav">
+    <div class="nav-item active" onclick="showSec('home',this)"><span class="nav-icon">🏠</span><span class="nav-label">الرئيسية</span></div>
+    <div class="nav-item" onclick="showSec('hadith',this)"><span class="nav-icon">📖</span><span class="nav-label">الأحاديث</span></div>
+    <div class="nav-item" onclick="showSec('virtues',this)"><span class="nav-icon">✨</span><span class="nav-label">الفضائل</span></div>
+    <div class="nav-item" onclick="showSec('occasions',this)"><span class="nav-icon">🕌</span><span class="nav-label">المواطن</span></div>
+    <div class="nav-item" onclick="showSec('tasbeeh',this)"><span class="nav-icon">🤲</span><span class="nav-label">التسبيح</span></div>
+</div>
+
+<script>
+function showSec(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('sec-' + id).classList.add('active');
+    el.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Tasbeeh
+let count = 0;
+let grandTotal = 0;
+let targets = [33, 100, 500, 1000];
+let targetIdx = 0;
+
+function increment() {
+    count++;
+    grandTotal++;
+    const el = document.getElementById('counter');
+    el.textContent = count;
+    el.classList.add('pulse');
+    setTimeout(() => el.classList.remove('pulse'), 100);
+    document.getElementById('grand-total').textContent = grandTotal;
+
+    // Vibrate on mobile
+    if (navigator.vibrate) navigator.vibrate(20);
+
+    // Target reached
+    if (count === targets[targetIdx]) {
+        if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+    }
+}
+
+function resetCounter() {
+    count = 0;
+    document.getElementById('counter').textContent = '0';
+}
+
+function cycleTarget() {
+    targetIdx = (targetIdx + 1) % targets.length;
+    document.getElementById('target-display').textContent = targets[targetIdx];
+    document.getElementById('target-btn').textContent = targets[targetIdx];
+}
+</script>
+</body>
+</html>
