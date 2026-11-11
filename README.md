@@ -19,7 +19,7 @@
 
 **الحوقلة** هي اختصار لعبارة «لا حول ولا قوة إلا بالله العلي العظيم»، وقد وصفها النبي ﷺ بأنها **كنز من كنوز الجنة** وباب من أبوابها. هي كلمة استسلام وتفويض كامل لله تعالى، يُقرّ بها العبد أنه لا حول له ولا قوة على تغيير حاله أو القيام بأموره إلا بمعونة الله وتوفيقه.
 
-**Hawqala** is the abbreviated form of "Lā ḥawla wa lā quwwata illā billāhil-ʿAliyyil-ʿAẓīm." The Prophet ﷺ described it as **a treasure from the treasures of Paradise** and one of its gates. It is a declaration of complete surrender to Allah — acknowledging that one possesses no ability to change any condition or accomplish anything except through Allah's aid and guidance.
+**Hawqala** is the abbreviated form of "Lā ḥawla wa lā quwwata illā billāhil-ʿAliyyil-ʿAẓīm." The Prophet ﷺ described it as **a treasure from the treasures of Paradise** and one of its gates. It is a declaration of complete surrender to Allah, acknowledging that one possesses no ability to change any condition or accomplish anything except through Allah's aid and guidance.
 
 ---
 
@@ -32,7 +32,7 @@
 | **Virtues** | 8 spiritual benefits with bilingual descriptions |
 | **Occasions** | 10 specific times and situations to say Hawqala |
 | **Tasbeeh Counter** | Digital dhikr counter with targets (33, 100, 500, 1000) |
-| **Mobile-First** | Designed for phones — touch-optimized tasbeeh button |
+| **Mobile-First** | Designed for phones: touch-optimized tasbeeh button |
 | **Bilingual** | Full Arabic and English content throughout |
 | **Offline** | Works without internet after first load |
 | **PWA-Ready** | Add to home screen for native app experience |
@@ -54,14 +54,14 @@
 
 ## Virtues | الفضائل
 
-1. **كنز من كنوز الجنة** — A treasure from the treasures of Paradise
-2. **باب من أبواب الجنة** — A gate from the gates of Paradise
-3. **دواء من 99 داء** — A remedy for ninety-nine ailments
-4. **التفويض الكامل لله** — Complete reliance upon Allah
-5. **من الباقيات الصالحات** — Among the enduring good deeds
-6. **الاستعانة بالله** — Seeking Allah's help in hardship
-7. **طرد الشيطان** — Repelling Satan and negative thoughts
-8. **السكينة والطمأنينة** — Bringing tranquility to the heart
+1. **كنز من كنوز الجنة**: A treasure from the treasures of Paradise
+2. **باب من أبواب الجنة**: A gate from the gates of Paradise
+3. **دواء من 99 داء**: A remedy for ninety-nine ailments
+4. **التفويض الكامل لله**: Complete reliance upon Allah
+5. **من الباقيات الصالحات**: Among the enduring good deeds
+6. **الاستعانة بالله**: Seeking Allah's help in hardship
+7. **طرد الشيطان**: Repelling Satan and negative thoughts
+8. **السكينة والطمأنينة**: Bringing tranquility to the heart
 
 ---
 
@@ -109,11 +109,11 @@ open docs/index.html
 
 ## License | الرخصة
 
-MIT License — see [LICENSE](LICENSE).
+MIT License, see [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
   <sub>لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</sub><br>
-  <sub>Built by <a href="https://github.com/SiteQ8">@SiteQ8</a> — Ali AlEnezi</sub>
+  <sub>Built by <a href="https://github.com/SiteQ8">@SiteQ8</a>, Ali AlEnezi</sub>
 </div>
